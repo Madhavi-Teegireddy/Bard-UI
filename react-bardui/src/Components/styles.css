@@ -1,0 +1,125 @@
+.box{
+    width:90%;
+    height:88%;
+    background-color: rgb(27, 26, 26);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap:160px
+}
+
+.card{
+    display: grid;
+    margin: auto;
+    grid-template-columns: 5% 85%;
+    width:95%;
+    height:250px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(15, 14, 14);  
+    /* margin-top: 20px;  */
+    border-radius: 30px;
+    gap:10px
+}
+
+.first{
+    border:1px solid aqua;
+    height:90%;
+}
+.first img{
+    width:40px
+}
+.second {
+    border: 1px solid pink;
+    height:90%;
+    text-align: left;
+}
+
+.second p:nth-child(1), .second p:nth-child(2){
+    color:white;
+    font-weight: 600;
+}
+
+.second p:nth-child(3),
+.second p:nth-child(4),
+.second p:nth-child(5)
+ {
+    color: rgb(105, 126, 243);
+    font-weight: 600;
+}
+
+.second p:nth-child(3):hover,
+.second p:nth-child(4):hover,
+.second p:nth-child(5):hover {
+    background-color: rgb(22, 18, 18);
+    cursor: pointer;
+    width:fit-content
+}
+
+.incard{
+    display: flex;
+    height:50px;
+    border: 2px solid gray;
+    width:82%;
+    margin: auto;
+    border-radius: 30px;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.incard:hover{
+    border: 2px solid rgb(97, 97, 197);
+}
+
+.incard input{
+    font-weight: 600;
+    color:whitesmoke;
+    background-color:rgb(27, 26, 26);
+    border: none;
+    outline: none;
+    padding-left: 20px;
+    font-size: 16px;
+}
+
+/* .incard span {
+    padding-right: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    margin-right: 30px;
+}
+
+.incard span:hover{
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    display: flex;
+    
+} */
+
+.incard span {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+}
+
+.incard span:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: gray;
+    z-index: -1;
+}
+
+/* .incard span:hover {
+} */

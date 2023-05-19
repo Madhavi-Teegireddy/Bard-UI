@@ -44,7 +44,7 @@ const Navbar = () => {
       </div>
       </div>
 
-    <div style={{width:"30%", backgroundColor:"black", height:"400px", color:"gray"}}>
+    <div style={{width:"20vw", backgroundColor:"black", height:"600px", color:"gray",display:"flex",border:"1px solid blue"}}>
       {isSidebarOpen && (
       <nav className={`nav ${isSidebarOpen ? 'open' : 'closed'}`}>
               <div className="round-icon">
@@ -94,8 +94,8 @@ const Navbar = () => {
       </nav>
       )}
     </div>
-
-    {/* <Content/> */}
+    
+    <Content/>
     </>
   )
 }
