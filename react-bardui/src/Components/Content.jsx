@@ -7,14 +7,10 @@ import useLocalStorage from 'use-local-storage'
 const Content = () => {
   const [theme, setTheme] = useLocalStorage('theme' ? 'dark' : 'light');
 
-
-
-
   return (
     <>
     <div 
     className='contBox' data-theme={theme}>
-       
        <div className='box'>
         <div className='card'>
             <div className='first'>
@@ -31,14 +27,11 @@ const Content = () => {
 
         <div className='incard'>
             <input placeholder='Enter a prompt here'/>
-
             <span>
               <MdMic></MdMic>
             </span>    
         </div>
        </div>
-
-       
     </div>
     </>
   )

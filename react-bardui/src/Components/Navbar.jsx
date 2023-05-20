@@ -71,8 +71,7 @@ const Navbar = () => {
         </div>
       </div>
       </div>
-
-
+      
     <div className='sidenavCont' data-theme={theme}>
       {isSidebarOpen && (
       <nav className={`nav ${isSidebarOpen ? 'open' : 'closed'}`} data-theme={theme}>

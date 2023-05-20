@@ -30,7 +30,7 @@
 
 .box{
     width:90%;
-    height:88%;
+    height:500px;
     border-radius: 30px;
     display: flex;
     justify-content: center;
@@ -54,7 +54,6 @@
 }
 
 .first{
-    /* border:1px solid aqua; */
     margin-top: 20px;
     height:90%;
 }
@@ -62,7 +61,6 @@
     width:40px
 }
 .second {
-    /* border: 1px solid pink; */
     height:90%;
     text-align: left;
 }
@@ -114,7 +112,6 @@
 }
 
 .incard span {
-    /* padding-right: 30px; */
     font-size: 25px;
     font-weight: 600;
     color: var(--splcolor);
@@ -145,9 +142,22 @@
     }
 
 }
-@media (min-width: 450px) and (max-width: 950px) {
+@media (min-width: 250px) and (max-width: 950px) {
     .card{
         margin-top: 20px;
+    }
+    .first{
+        margin-left: -30px;
+    }
+}
+
+@media (min-width: 250px) and (max-width: 550px) {
+    .card {
+        margin-top: 50px;
+    }
+
+    .first, .second{
+       font-size: 15px;
     }
 }
 
@@ -156,6 +166,21 @@
         margin-bottom: 30px;
     }
 }
+
+
+@media (min-width: 200px) and (max-width: 399px) {
+    .incard {
+        margin-bottom: 50px;
+    }
+}
+
+@media (min-width: 200px) and (max-width: 450px) {
+    .incard input {
+        width: 100px
+    }
+}
+
+
 
 @media (min-width: 200px) and (max-width: 850px) {
     .contBox {
@@ -171,7 +196,7 @@
 
     .card{
         width:80%;
-        height: 85%;
+        height: auto;        
     }
 }
 
