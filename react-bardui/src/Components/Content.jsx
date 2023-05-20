@@ -1,12 +1,20 @@
 import React from 'react'
 import "./styles.css"
 import { MdMic } from "react-icons/md";
+import useLocalStorage from 'use-local-storage'
 
 
 const Content = () => {
+  const [theme, setTheme] = useLocalStorage('theme' ? 'dark' : 'light')
+
+  const switchTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme)
+  }
+
   return (
     <>
-    <div style={{width:"80vw",backgroundColor:"black",marginTop:"-602px", height:"600px", color:"gray", border:"1px solid red",display:"flex",position:"absolute",left:"20vw"}}>
+    <div className='contBox' data-theme={theme}>
        
        <div className='box'>
         <div className='card'>
