@@ -1,20 +1,19 @@
-import React from 'react'
-import "./styles.css"
+import React, { useState } from 'react'
+import "../style/styles.css"
 import { MdMic } from "react-icons/md";
 import useLocalStorage from 'use-local-storage'
 
 
 const Content = () => {
-  const [theme, setTheme] = useLocalStorage('theme' ? 'dark' : 'light')
+  const [theme, setTheme] = useLocalStorage('theme' ? 'dark' : 'light');
 
-  const switchTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme)
-  }
+
+
 
   return (
     <>
-    <div className='contBox' data-theme={theme}>
+    <div 
+    className='contBox' data-theme={theme}>
        
        <div className='box'>
         <div className='card'>
@@ -35,7 +34,7 @@ const Content = () => {
 
             <span>
               <MdMic></MdMic>
-            </span>            
+            </span>    
         </div>
        </div>
 

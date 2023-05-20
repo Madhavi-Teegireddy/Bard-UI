@@ -1,7 +1,7 @@
 :root {
     --background: #ffffff;
     --text-primary: #000;
-    --text-secondary: #8e05c2;
+    --text-secondary: #0066b2;
     --accent: #8e05c2;
     --border: #333;
     --form-bg: rgb(236, 233, 233);
@@ -11,7 +11,7 @@
 [data-theme='dark'] {
     --background: #000;
     --text-primary: #fff;
-    --text-secondary: #8e05c2;
+    --text-secondary: #0066b2;
     --accent: #8e05c2;
     --border: #808080;
     --form-bg: #191919;
@@ -21,48 +21,48 @@
     display: flex;
     position: absolute;
     left:20vw;
-    width:80vw;
+    width:79vw;
     background-color: var(--background);
     margin-top: -602px;
     height:600px;
     color:var(--splcolor);
-    border:2px solid red;
     }
 
 .box{
     width:90%;
     height:88%;
-    background-color: var(--form-bg);
     border-radius: 30px;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap:160px
+    gap:160px;
+    background-color: var(--form-bg);
 }
 
 .card{
     display: grid;
     margin: auto;
     grid-template-columns: 5% 85%;
-    width:95%;
-    height:250px;
+    width:90%;
+    height:auto;
     justify-content: center;
     align-items: center;
     background-color: var(--background);  
-    /* margin-top: 20px;  */
     border-radius: 30px;
-    gap:10px
+    padding: 20px;
+    gap:10px;
 }
 
 .first{
-    border:1px solid aqua;
+    /* border:1px solid aqua; */
+    margin-top: 20px;
     height:90%;
 }
 .first img{
     width:40px
 }
 .second {
-    border: 1px solid pink;
+    /* border: 1px solid pink; */
     height:90%;
     text-align: left;
 }
@@ -133,6 +133,45 @@
 }
 
 
+/* media queries */
 
 
+@media (max-width: 480px) {
+    .contBox {
+        left: 10vw;
+        width: 80vw;
+        margin-top: -502px;
+        height: 500px;
+    }
+
+}
+@media (min-width: 450px) and (max-width: 950px) {
+    .card{
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 950px) {
+    .incard {
+        margin-bottom: 30px;
+    }
+}
+
+@media (min-width: 200px) and (max-width: 850px) {
+    .contBox {
+        left: 18vw;
+        width: 80vw;
+        margin-top: -600px;
+        height: 600px;
+    }
+
+    .incard {
+        margin-top: -120px;
+    }
+
+    .card{
+        width:80%;
+        height: 85%;
+    }
+}
 

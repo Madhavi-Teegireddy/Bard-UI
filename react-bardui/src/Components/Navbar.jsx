@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import "./Navbar.css"
+import React, { useEffect, useState } from 'react'
+import "../style/Navbar.css"
 import { TfiMenu } from "react-icons/tfi";
 import { BiReset } from "react-icons/bi";
 import { RxTimer } from "react-icons/rx";
@@ -15,7 +15,8 @@ import useLocalStorage from 'use-local-storage'
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [theme, setTheme] = useLocalStorage('theme' ? 'dark' : 'light')
+  const [theme, setTheme] = useLocalStorage('theme' ? 'dark' : 'light');
+
 
   const switchTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -26,7 +27,19 @@ const Navbar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  
+ useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 900) {
+        setIsSidebarOpen(false);
+      } else {
+        setIsSidebarOpen(true);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <>
@@ -38,9 +51,13 @@ const Navbar = () => {
             <span className='menu'>
               <TfiMenu></TfiMenu>
             </span>
+            <div className="tooltip">
+               MainMenu
+            </div>
           </button>
         </div>
         <div className="textB">Bard</div>
+        <span class="small-text">Experiment</span>
       </div>
 
       <div className="main-icon">
@@ -49,12 +66,14 @@ const Navbar = () => {
             <span className='menu' >
               <CgMenuGridO style={{fontSize:"30px"}}></CgMenuGridO>
             </span>
+            <div className='tooltip'>GoogleApps</div>
           </button>
         </div>
       </div>
       </div>
 
-    <div className='sidenavCont' style={{border:"1px solid blue"}} data-theme={theme}>
+
+    <div className='sidenavCont' data-theme={theme}>
       {isSidebarOpen && (
       <nav className={`nav ${isSidebarOpen ? 'open' : 'closed'}`} data-theme={theme}>
               <div className="round-icon">
@@ -118,10 +137,12 @@ const Navbar = () => {
       </nav>
       )}
     </div>
-    
-    <Content/>
+
+     <Content/>
+
     </>
   )
 }
 
 export default Navbar
+
